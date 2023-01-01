@@ -33,11 +33,11 @@
            
            
                <div class='flex justify-end md:gap-8 gap-4 pt-5 pb-5 pr-5'>      
-               <inertia-link
+               <Link
                    :href="route('productos.index')"                    
                    class='w-auto bg-gray-500 hover:bg-gray-700 rounded-lg shadow-xl font-medium text-white px-4 py-2' type="button">
                    Cancelar
-               </inertia-link> 
+               </Link> 
                <button 
                    type="submit"
                    class='w-auto bg-purple-500 hover:bg-purple-700 rounded-lg shadow-xl font-medium text-white px-4 py-2'
@@ -56,10 +56,12 @@
 
 <script>
 import AppLayout from '@/Layouts/AppLayout.vue';
+import { Link } from '@inertiajs/inertia-vue3';
 export default {
    components:{
-       AppLayout
-   },
+    AppLayout,
+    Link
+},
    props:{
        errors: Object
    },

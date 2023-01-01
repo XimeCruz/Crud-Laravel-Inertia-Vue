@@ -17,7 +17,7 @@ class ProductoController extends Controller
     public function index()
     {
          $productos = Producto::all();
-         return  Inertia::render('Mostrar', ['producto'=>$productos]);
+         return  Inertia::render('Mostrar', ['productos'=>$productos]);
     }
 
     /**
@@ -94,4 +94,3 @@ class ProductoController extends Controller
         return Redirect::route('productos.index');
     }
 }
-

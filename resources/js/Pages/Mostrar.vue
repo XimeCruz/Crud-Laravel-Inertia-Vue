@@ -8,11 +8,11 @@
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
 
-                 <inertia-link
+                 <Link
                   :href="route('productos.create')"
                   class="flex-shrink-0 bg-blue-500 text-white text-base font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-blue-200" type="button">
                      Nuevo
-                 </inertia-link>
+                </Link>
 
                     <table class="rounded-t-lg mt-5 min-w-full mx-auto bg-gray-800 text-gray-100">
                         <thead>
@@ -35,17 +35,17 @@
                                 <div class="text-sm"><span>$ </span>{{ producto.precio }}</div>                    
                             </td>
                             <td class="flex m-2">
-                            <inertia-link 
+                            <Link
                                 :href="route('productos.edit', producto.id)"
                                 class="flex-shrink-0 bg-purple-600 text-white text-base font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-purple-200" type="button">
                                 Editar
-                            </inertia-link>
-                            <inertia-link
+                            </Link>
+                            <Link
                                 method="delete"
                                 :href="route('productos.destroy', producto.id)"
                                 class="flex-shrink-0 bg-pink-500 text-white text-base font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2 focus:ring-offset-pink-200" type="button">
                                 Borrar
-                            </inertia-link>
+                            </Link>
                             </td>
                         </tr>   
                         </tbody>
@@ -61,12 +61,14 @@
 
 <script>
 import AppLayout from '@/Layouts/AppLayout.vue';
+import { Link } from '@inertiajs/inertia-vue3';
 export default {
     props:{
         productos: Array
     },
     components:{
-        AppLayout
-    }
+    AppLayout,
+    Link
+}
 };
 </script>
